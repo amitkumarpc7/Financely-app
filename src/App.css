@@ -1,0 +1,16 @@
+/* Sign up Page Css */
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100vw ;
+    height: 90vh;
+}
+.signup-wrapper{
+    width: 70%;
+    max-width: 450px;
+    height: auto;
+    box-shadow: var(--shadow);
+    border-radius: 1rem;
+    padding: 1rem 1.5rem;
+}
