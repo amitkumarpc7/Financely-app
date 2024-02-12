@@ -6,11 +6,16 @@
     border-radius: 1rem;
     padding: 1rem 1.5rem;
 }
-
 .title{
     font-weight: 500;
     font-size: 1.2rem;
     text-align: center;
+}
+.logo-style{
+    color:var(--theme)
+}
+.logo-style:hover{
+    font-weight: 800;
 }
 .p-login{
     text-align:center;

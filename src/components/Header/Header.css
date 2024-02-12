@@ -14,6 +14,9 @@
     font-weight: 500;
     margin: 0;
 }
+.logo:hover{
+    font-weight: 700;
+}
 .link{
     opacity: 0.8;
     cursor: pointer;

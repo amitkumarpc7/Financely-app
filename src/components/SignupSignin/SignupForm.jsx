@@ -114,7 +114,7 @@ const SignupForm = ({setFlag,flag}) => {
   return (
     <>
     <div className='signup-wrapper'>
-        <h2 className='title'>Sign up on<span style={{color:"var(--theme"}}> Financely.</span></h2>
+        <h2 className='title'>Sign up on<span className='logo-style'> Financely.</span></h2>
         <form>
             <Input
             label={"Full Name"}
