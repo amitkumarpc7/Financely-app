@@ -23,6 +23,7 @@
     font-size: 0.9rem;
     margin:0;
     cursor:pointer;
+    transition: 0.3s ease;
 }
 .p-login:hover{
     font-weight: 600;
