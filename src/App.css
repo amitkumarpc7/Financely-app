@@ -14,3 +14,10 @@
     border-radius: 1rem;
     padding: 1rem 1.5rem;
 }
+.cardStyle  {
+    box-shadow: var(--shadow);
+    margin: 2rem;
+    border-radius: 0.5rem;
+    min-width: 400px;
+    flex: 1;
+  }

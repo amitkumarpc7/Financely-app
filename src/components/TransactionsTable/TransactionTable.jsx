@@ -49,7 +49,7 @@ const TransactionTable = ({transactions,addTransaction , fetchTransactions}) => 
           return 0;
         }
       });
-
+// Using PapaParse to create csv document
       function exportToCsv() {
         
         const csv = unparse(transactions, {
@@ -94,7 +94,7 @@ const TransactionTable = ({transactions,addTransaction , fetchTransactions}) => 
     
      <div
       style={{
-        width: "100%",
+        width: "96vw",
         padding: "0rem 2rem",
       }}
     >

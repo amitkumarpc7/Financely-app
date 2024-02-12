@@ -23,38 +23,53 @@ const Chart=({sortedTransactions})=> {
         }
         return acc;
     },{});
+
+    // for totalling each tags
+    let newSpending = [
+        { tag: "Food", amount: 0 },
+        { tag: "Education", amount: 0 },
+        { tag: "Investment", amount: 0 },
+      ];
+      spendingData.forEach((item) => {
+        if (item.tag.toLowerCase() == "food") {
+          newSpending[0].amount += item.amount;
+        } else if (item.tag.toLowerCase() == "education") {
+          newSpending[1].amount += item.amount;
+        } else {
+          newSpending[2].amount += item.amount;
+        }
+      });
     const config = {
-      data:data,
+      data,
       width: 500,
       autoFit: true,
       xField: 'date',
       yField: 'amount',
+      tooltip: {
+        formatter: (datum) => ({
+          name: "Amount",
+          value: `$${datum.amount.toFixed(2)}`,
+        }),
+      },
+      
     };
    const spendingConfig = {
-    data:Object.values(finalSpendings),
-    width: 500,
+    data:spendingData,
+    // width: 500,
     angleField:"amount",
     colorField:"tag",
    };
  
    let chart;
    let pieChart;
-   const cardStyle = {
-    boxShadow: "0px 0px 30px 8px rgba(227, 227, 227, 0.75)",
-    margin: "2rem",
-    borderRadius: "0.5rem",
-    minWidth: "400px",
-    flex: 1,
-  };
       return (
         <div>
             <Row gutter={16}>
-                
-                <Card bordered={true} style={cardStyle}>
+                <Card bordered={true} className="cardStyle" >
                 <h2>Financial Statistics</h2>
                 <Line {...config} onReady={(chartInstance) => (chart = chartInstance)} />
                 </Card>
-                <Card bordered={true} style={{ ...cardStyle, flex: 0.45 }}>
+                <Card bordered={true} className="cardStyle" style={{ flex: 0.45 }}>
                 <h2>Your Spendings</h2>
                 <Pie {...spendingConfig} onReady={(chartInstance) => (pieChart = chartInstance)} />
                 </Card>

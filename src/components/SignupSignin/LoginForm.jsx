@@ -26,6 +26,7 @@ const LoginForm = ({setFlag,flag}) => {
             toast.success("Logged in successfully")
             console.log("User",user);
             setLoading(false);
+            navigate("/dashboard");
             
         })
             .catch((error) => {
@@ -33,7 +34,7 @@ const LoginForm = ({setFlag,flag}) => {
             const errorMessage = error.message;
             toast.error(errorMessage);
             setLoading(false);
-            navigate("/dashboard");
+            
             });    
         }
         else{
